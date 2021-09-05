@@ -19,7 +19,7 @@ body{
     /* background-color: rgb(241, 239, 239); */
     background-color: rgb(255, 255, 255);
     /* height: 100%; */
-    max-height: 100vh;
+    height: 100vh;
     top: 0;
     right: -100%;
     overflow: hidden;
@@ -821,4 +821,39 @@ header > h1 span{
 }
 .items li:last-child{
     background-color: teal;
+}
+
+
+@media (max-width:567px) {
+        
+    header > div{
+        flex: 1;
+    }
+    header > h1 {
+        flex: 1;
+        margin:0 40px;
+        font-size: 25px;
+    }
+    
+    
+    
+}
+
+@media (max-width:321px) {
+        
+    header > div{
+        flex: 1;
+    }
+    header > h1 {
+        flex: 1;
+        margin:0 30px;
+    }
+    .left-corner > div:first-child{
+        margin-right: 10px;
+    }
+    .right-header > div:not(:last-child) {
+        margin-right: 10px;
+    }
+    
+    
 }
