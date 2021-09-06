@@ -895,6 +895,7 @@ section > div{
 }
 .category-label i{
     cursor: pointer;
+    transition: .3s;
 
 }
 .category-label > span {
@@ -925,13 +926,17 @@ section > div{
 }
 .categories > div i {
     color: rgb(196, 195, 195);
+    
 }
 .categories > div:not(:last-child){
     border-bottom: 1px solid rgb(197, 197, 197);
 }
 
 
+.category-label:hover >i:last-of-type{
+    transform: rotate(90deg);
 
+}
 .category-label:hover .categories {
     opacity: 1;
     top: 100%;
