@@ -345,6 +345,7 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 10px 30px ;
+    border-bottom: 1px solid rgb(223, 221, 221);
 }
 .left-corner{
     display: none;
@@ -411,12 +412,17 @@ header > h1 span{
     box-shadow: 0 0 10px gainsboro;
     /* z-index: 10; */
     background-color: rgb(226, 222, 222);
+    pointer-events: none;
+
     
 }
 .select-menu.show{
     opacity: 1;
     top: 100%;
-    z-index: 5;
+    z-index: 15;
+    /* display: flex; */
+    pointer-events: visible;
+    
 }
 .select-menu span {
     cursor: pointer;
@@ -741,9 +747,11 @@ header > h1 span{
     color: rgb(61, 61, 61) ;
     cursor: pointer;
 }
+/*
 .menu-content {
-    /* padding-top: 15px ; */
+    padding-top: 15px ; 
 }
+*/
 .menu-content ul {
     width: 100%;
     /* background-color: rgb(155, 163, 155); */
@@ -854,6 +862,232 @@ header > h1 span{
     .right-header > div:not(:last-child) {
         margin-right: 10px;
     }
+       
+}
+
+section {
+    width: 100vw;
+    height: 45px;
+    border-bottom: 1px solid rgb(216, 213, 213);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding-left: 30px ;
+    position: relative;
     
+}
+
+section > div{
+    height: 45px;
+}
+.category-label {
+    background-color: orange;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    position: relative;
+    cursor: pointer;
+
+}
+.category-label i{
+    cursor: pointer;
+
+}
+.category-label > span {
+    margin: 0 10px;
+    cursor: pointer;
+
+}
+
+.category-label .categories{
+    width: 100%;
+    height: fit-content;
+    border: 1px solid rgb(214, 213, 213);
+    border-top: none;
+    position: absolute;
+    top: -350%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: .3s;
+    background-color: rgb(241, 239, 239);
+}
+.categories > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+    padding: 10px ;
+    
+}
+.categories > div i {
+    color: rgb(196, 195, 195);
+}
+.categories > div:not(:last-child){
+    border-bottom: 1px solid rgb(197, 197, 197);
+}
+
+
+
+.category-label:hover .categories {
+    opacity: 1;
+    top: 100%;
+    pointer-events: visible;
+    z-index: 20;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.features{
+    display: flex;
+    height: 45px;
+    align-items: center;
+}
+.features > div{
+    margin: 0 20px;
+    /* border: 1px solid gray; */
+    display: flex;
+    height: 45px;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.features > div > span {
+    margin-right: 10px;
+}
+.features > div i {
+    color: rgb(160, 159, 159);
+
+}
+
+.features > div:nth-child(2)::after{
+    content: "HOT";
+    padding: 3px 6px;
+    font-size: 10px;
+    background-color: tomato;
+    border-radius: 2px;
+    position: absolute;
+    top: -10px;
+    right: 20%;
+    color: white;
+    
+}
+
+.features > div:nth-child(2)::before{
+    content: "";
+    border-width: 6px;
+    border-style: solid;
+    border-color: tomato transparent transparent transparent;
+    position: absolute;
+    top: 5px;
+    right: 45%;
+    
+}
+
+.features > div:last-child::after{
+    content: "ONLY $48";
+    padding: 3px;
+    font-size: 10px;
+    background-color: rgb(22, 148, 231);
+    border-radius: 2px;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    color: white;
+
+}
+
+.features > div:last-child::before{
+    content: "";
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgb(22, 148, 231) transparent transparent transparent;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+
+}
+
+.features > div:first-child > div ,
+.features > div:nth-child(2) > div,
+.features > div:nth-child(3) > div{
+    width: 400px;
+    height: fit-content;
+    padding: 10px;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 10px gray;
+    position: absolute;
+    top: -140%;
+    left: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    transition: .5s;
+    opacity: 0;
+    pointer-events: none;
+
+}
+.features > div:first-child:hover > div ,
+.features > div:nth-child(2):hover > div,
+.features > div:nth-child(3):hover > div{
+    top: 100%;
+    opacity: 1;
+    left: 0;
+    pointer-events: visible;
+}
+.features > div:first-child > div::before,
+.features > div:nth-child(2) > div::before,
+.features > div:nth-child(3) > div::before{
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    content: "";
+    border-width: 7px;
+    border-style: solid;
+    border-color: transparent transparent rgb(255, 255, 255) transparent;
+    
+}
+.features > div:first-child > div span,
+.features > div:nth-child(2) > div span,
+.features > div:nth-child(3) > div span{
+    background-color: red;
+    width: 120px;
+    height: 120px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    
+} 
+.features > div:nth-child(2) > div span{
+    background-color: yellowgreen;
+}
+.features > div:nth-child(3) > div span{
+    background-color: rgb(72, 70, 243);
+}
+
+@media (max-width:991px) {
+    section > div:first-child,
+    section > div:nth-child(2){
+        display: none;
+    }
+    section{
+        height: 100%;
+        border: none;
+    }
     
 }
