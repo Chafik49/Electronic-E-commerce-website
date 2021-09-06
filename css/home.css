@@ -1115,16 +1115,13 @@ section > div{
     padding-left:20px;
     height: 90%;
     border-radius: 10px;
-    transition: .4s;
+    
     
 }
 .slider.slider-1 {
-    left: 50%;
+    left: 150%;
     top: 50%;
     transform: translate(-50%,-50%);
-}
-.slider-1.go {
-    left: -120%;
 }
 
 .slider.slider-2 {
@@ -1132,15 +1129,23 @@ section > div{
     top: 50%;
     transform: translate(-50%,-50%);
 }
-.slider.slider-2.go {
-    left: 50%;
+.slider.goLeft{
+    left : -150%;
 }
 
 .slider.slider-3 {
-    left: 200%;
+    left: 180%;
     top: 50%;
     transform: translate(-50%,-50%);
 }
+
+.slider.active{
+    left: 50%;
+    transition: .5s;
+
+    
+}
+
 .product-name {
     color: orange;
     font-weight: bold;
@@ -1151,7 +1156,7 @@ section > div{
     color: rgb(51, 51, 51);
     font-weight: 600;
     font-size: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     line-height: 30px;
     
 }
@@ -1165,6 +1170,7 @@ section > div{
     color: rgb(48, 48, 48);
     cursor: pointer;
     transition: .3s;
+    margin-bottom: 20px;
 }
 .buy-btn:hover {
     background-color: black;
@@ -1260,12 +1266,13 @@ section > div{
 .dots span {
     width: 20px;
     height: 20px;
-    background-color: rgb(150, 149, 149);
+    background-color: rgb(189, 188, 188);
     /* padding: 10px; */
     border-radius: 50%;
     margin: 0 5px;
     color: transparent;
     cursor: pointer;
+    transition: .4s;
     
 }
 .dots span.active{

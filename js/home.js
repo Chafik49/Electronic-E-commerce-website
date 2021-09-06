@@ -161,3 +161,47 @@ menuIcon.onclick = ()=>{
 closeMenu.onclick = ()=>{
     theMenu.classList.remove("show");
 }
+
+let dot = document.querySelectorAll(".dots span"),
+    slider = document.querySelectorAll(".slider");
+
+let currentSlide = 0;
+
+dot.forEach(dt=>{
+
+    dt.onclick = ()=>{
+        removeActiveDot();
+        dt.classList.add("active");
+        if(dt.classList.contains("dot-1")){
+            currentSlide = 0;
+            console.log(currentSlide);
+        }
+        if(dt.classList.contains("dot-2")){
+            currentSlide = 1;
+            console.log(currentSlide);
+        }
+        if(dt.classList.contains("dot-3")){
+            currentSlide = 2;
+            console.log(currentSlide);
+        }
+
+      gotoSlide(currentSlide);
+    }
+    
+})
+
+const removeActiveDot = ()=>{
+    dot.forEach(d=>{
+        d.classList.remove("active");
+    })
+}
+function gotoSlide(sileNumber){
+    classSlide();
+    slider[sileNumber].classList.add("active");
+
+}
+const classSlide = ()=>{
+    slider.forEach(s=>{
+        s.classList.remove("active");
+    })
+}
