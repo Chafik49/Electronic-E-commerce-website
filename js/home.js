@@ -108,11 +108,11 @@ leftSearchIcon.onclick = ()=>{
     searchFieldMobil.classList.toggle("show");
     
 }
+
 closeSearch.onclick = ()=>{
     searchFieldMobil.classList.remove("show");
 
 }
-
 
 let selectLabelMobil = document.querySelector(".select-field-mobil"),
     selectMenuMobil = document.querySelector(".select-menu-mobil"),
@@ -120,14 +120,15 @@ let selectLabelMobil = document.querySelector(".select-field-mobil"),
 
 selectLabelMobil.onclick = ()=>{
     selectMenuMobil.classList.toggle("show");
-}
+};
+
 selectItemMobil.forEach(it=>{
     it.addEventListener("click", ()=>{
        document.querySelector("label p").textContent = it.textContent;
        
     })
 
-})
+});
 
 let showMoreIcon = document.querySelectorAll(".show-more"),
     itemsHome = document.querySelector(".home-items"),
@@ -136,7 +137,6 @@ let showMoreIcon = document.querySelectorAll(".show-more"),
     menuIcon = document.querySelector(".menu-icon"),
     theMenu = document.querySelector(".themenu"),
     closeMenu = document.querySelector(".close-menu");
-
 
 showMoreIcon.forEach(icon=>{
     icon.onclick = function(){
@@ -152,11 +152,12 @@ showMoreIcon.forEach(icon=>{
         }
         
     }
-})
+});
 
 menuIcon.onclick = ()=>{
     theMenu.classList.toggle("show");
 }
+
 closeMenu.onclick = ()=>{
     theMenu.classList.remove("show");
 }
