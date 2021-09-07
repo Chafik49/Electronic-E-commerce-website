@@ -50,12 +50,29 @@ let myAccount = document.querySelector(".my-account > span"),
 
 myAccount.onclick = ()=>{
     myAccountForm.classList.toggle("show");
+    document.querySelector(".top-bar").classList.toggle("of");
+    document.querySelector("header").classList.toggle("of");
+    document.querySelector("section").classList.toggle("of");
+    document.querySelector(".slide-cont").classList.toggle("of");
+
+    
+
 }
 closeForm.onclick = ()=>{
     myAccountForm.classList.remove("show");
+    document.querySelector(".top-bar").classList.remove("of");
+    document.querySelector("header").classList.remove("of");
+    document.querySelector(".slide-cont").classList.remove("of");
+    document.querySelector("section").classList.remove("of");
+
+
 }
 document.querySelector(".account-icon").onclick = ()=>{
     myAccountForm.classList.toggle("show");
+    document.querySelector(".top-bar").classList.toggle("of");
+    document.querySelector("header").classList.toggle("of");
+    document.querySelector("section").classList.toggle("of");
+    document.querySelector(".slide-cont").classList.toggle("of");
 
 }
 
@@ -106,11 +123,20 @@ let searchFieldMobil = document.querySelector(".search-form-mobil"),
 
 leftSearchIcon.onclick = ()=>{
     searchFieldMobil.classList.toggle("show");
+    document.querySelector(".top-bar").classList.toggle("of");
+    document.querySelector("header").classList.toggle("of");
+    document.querySelector("section").classList.toggle("of");
+    document.querySelector(".slide-cont").classList.toggle("of");
     
 }
 
 closeSearch.onclick = ()=>{
     searchFieldMobil.classList.remove("show");
+     document.querySelector(".top-bar").classList.remove("of");
+    document.querySelector("header").classList.remove("of");
+    document.querySelector(".slide-cont").classList.remove("of");
+    document.querySelector("section").classList.remove("of");
+
 
 }
 
@@ -156,10 +182,19 @@ showMoreIcon.forEach(icon=>{
 
 menuIcon.onclick = ()=>{
     theMenu.classList.toggle("show");
+    document.querySelector(".top-bar").classList.toggle("of");
+    document.querySelector("header").classList.toggle("of");
+    document.querySelector("section").classList.toggle("of");
+    document.querySelector(".slide-cont").classList.toggle("of");
 }
 
 closeMenu.onclick = ()=>{
     theMenu.classList.remove("show");
+    document.querySelector(".top-bar").classList.remove("of");
+    document.querySelector("header").classList.remove("of");
+    document.querySelector(".slide-cont").classList.remove("of");
+    document.querySelector("section").classList.remove("of");
+
 }
 
 let dot = document.querySelectorAll(".dots span"),
@@ -179,13 +214,16 @@ dot.forEach(dt=>{
         if(dt.classList.contains("dot-2")){
             currentSlide = 1;
             console.log(currentSlide);
+            
         }
         if(dt.classList.contains("dot-3")){
             currentSlide = 2;
             console.log(currentSlide);
+            
         }
-
-      gotoSlide(currentSlide);
+        goOfSlide(currentSlide);
+      
+        gotoSlide(currentSlide);
     }
     
 })
@@ -200,8 +238,22 @@ function gotoSlide(sileNumber){
     slider[sileNumber].classList.add("active");
 
 }
+function goOfSlide(num){
+    if(num > 0 ){
+        removeClassOf();
+        slider[num-1].classList.add("of");
+        
+    }
+    
+}
 const classSlide = ()=>{
     slider.forEach(s=>{
         s.classList.remove("active");
+    })
+}
+
+function removeClassOf(){
+    slider.forEach(s=>{
+        s.classList.remove("of");
     })
 }
