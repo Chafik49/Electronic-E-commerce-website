@@ -57,7 +57,7 @@
 }
 .solde-container-one > div:nth-child(3) {
     position: absolute;
-    top:95%;
+    top:90%;
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
@@ -70,19 +70,19 @@
     font-size: 14px;
     transition: .3s;
     text-align: center;
-    opacity: 0;
     
-
+}
+@media (max-width:567px){
+    .solde-container-one > div:nth-child(3) {
+        width: 250px;
+    }
 }
 .solde-container-one > div:nth-child(3):hover {
     background-color: black;
     color: orange;
 
 }
-.solde-container-one:hover > div:nth-child(3) {
-    opacity: 1;
-    top: 90%;
-}
+
 .solde-container-one > div:last-child {
     position: absolute;
     top:5%;
@@ -146,6 +146,15 @@
 }
 .slide-img img {
     margin-top: 40px;
+}
+.slide-img.first img{
+    margin-top: 60px;
+}
+@media (max-width:567px){
+    .slide-img img {
+        max-width: 300px;
+        max-height: 300px;
+    }
 }
 .img-solde-one .slide-img:first-child{
     /* background-color: aqua; */
