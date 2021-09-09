@@ -257,3 +257,44 @@ function removeClassOf(){
         s.classList.remove("of");
     })
 }
+
+let slidesContainerOne = document.querySelector(".img-solde-one"),
+    slideImgOne = document.querySelectorAll(".slide-img");
+    nextBtnOne = document.querySelector(".next-one"),
+    prevBtnOne= document.querySelector(".prev-one"),
+
+    numberOfImgOne = slideImgOne.length,
+    slideOneWidth = slideImgOne[0].clientWidth,
+    slideNowOne = 0;
+
+const initOne = ()=>{
+    slideImgOne.forEach( (img,i)=>{
+        img.style.left = i * 100 + "%";
+    })
+}
+initOne();
+
+nextBtnOne.addEventListener("click",()=>{
+    prevBtnOne.classList.remove("done");
+    slideNowOne++;
+    goToSlide(slideNowOne);
+    if(slideNowOne >= numberOfImgOne-1){
+        nextBtnOne.classList.add("done");
+        return;
+    }
+})
+prevBtnOne.addEventListener("click",()=>{
+    nextBtnOne.classList.remove("done");
+    slideNowOne--;
+    goToSlide(slideNowOne);
+    if(slideNowOne <= 0){
+        prevBtnOne.classList.add("done");
+        return;
+    }
+})
+function goToSlide(slideNumber){
+    let step = slideOneWidth * slideNumber;
+    slidesContainerOne.style.transform = `translate(-${step}px)`;
+
+}
+
